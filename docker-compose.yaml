@@ -1,0 +1,17 @@
+version: "3"
+services:
+  vault:
+    image: vault:1.4.0
+    ports:
+      - 8200:8200
+      - 8300:8300
+    volumes:
+      - ./vault/config:/vault/config
+      - ./vault/tls:/vault/tls
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=dev
+      - VAULT_TOKEN=dev
+      - VAULT_ADDR=http://0.0.0.0:8200
+    command: vault server -dev -config=/vault/config/vault-config.hcl
+    cap_add:
+      - IPC_LOCK

@@ -1,0 +1,12 @@
+# TLS certificates
+
+vault/tls/*.crt
+vault/tls/*.key
+vault/tls/*.csr
+vault/tls/*.pfx
+
+vault/util/*.crt
+vault/util/*.key
+vault/util/*.csr
+vault/util/*.pfx
+
